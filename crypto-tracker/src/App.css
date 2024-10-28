@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -22,10 +24,26 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.App-link:hover {
+  color: #21a1f1;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +53,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 50%;
+  font-size: 1rem;
 }
