@@ -12,7 +12,7 @@ function App() {
 
   const fetchCryptoPrice = async()=>{
     setLoading(true)
-    setError(null)
+    
     const crypto_api = process.env.REACT_APP_CRYPTO_API_URL
 
     try {
@@ -27,7 +27,7 @@ function App() {
           }
         }
       )
-      setCryptoData(response.data)
+      setCryptoData(Array.isArray(response.data) ? response.data : [])
       setError(null)
     } catch (error) {
       setError('Failed to fetch crypto data')
@@ -47,9 +47,11 @@ function App() {
     setSearch(event.target.value)
   }
 
-  const searchCrypto = cryptoData.filter((crypto)=>
-    crypto.name.toLowerCase().includes(search.toLocaleLowerCase())
+  const searchCrypto = Array.isArray(cryptoData)
+    ? cryptoData.filter((crypto) =>
+      crypto.name.toLowerCase().includes(search.toLowerCase())
   )
+  :[]
 
   
 
